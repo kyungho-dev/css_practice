@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block&Inline</title>
+</head>
+<body>
+<!-- block level -->
+<div></div>
+<div></div>
+<div></div>
+
+
+<!-- inline level -->
+<span></span>
+<span></span>
+<span></span>
+</body>
+
+<style>
+  div, span {
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+  }
+  div {
+    background: red;
+  }
+  span {
+    background: blue;
+    /* display: block; */
+    /* display 옵션을 주면 inline 인 span 을 block 처럼 동작하게 할 수 있다. */
+  }
+</style>
+
+</html>
