@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<article class="container">
+  <div></div>
+  <div class="box">I'm Box</div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</article>
+</body>
+
+<style>
+  div {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    background: red;
+  }
+  .container {
+    background: yellow;
+    left: 20px;
+    top: 20px;
+    /* position: static; */
+    /* 기본적으로 position static을 갖고있고,
+        static은 html에 작성된 순서대로 보여지는것을 말함.
+        그러므로 left, top 속성을 주더라도 적용되지 않음.
+        (순서대로 보여져야 하므로 container는 가장 위에 있을테니까)
+        그러므로 top, left 등을 적용시키려면 position을
+        relative로 바꿔야 한다.
+        relative는 원래 있어야 하는 위치를 기준으로 이동
+     */
+    position: relative;
+  }
+  .box {
+    background: blue;
+    left: 20px;
+    top: 20px;
+    /* position: absolute; */
+    /* relative가 아니고 absolute를 준다면?
+        absolute는 기준이 자기 자신 아이템과 "가장 가까이에 있는 (해당 아이템이 담겨있는) 박스"가 기준이 된다.
+        위의 경우 div는 container 에 담겨 있으므로 container 의 시작점이 기준
+     */
+
+    /* position fixed는 어떻게 될까? */
+    /* position: fixed; */
+    /* fixed는 상자(즉, 현재 기준 container)가 아닌, 해당 페이지(window)를 기준으로 한다. */
+
+    /* Sticky */
+    position: sticky;
+    /* sticky는 원래 있던 자리에 있는데, 스크롤을 할 경우, 계속 그 위치에 붙어있는것! */
+
+    /* position 정리 (기준이 무엇인지 확인)
+        1. 기본값은 static
+        2. relative 는 "원래 있어야 하는 위치"가 기준.
+        3. absolute 는 "자기 자신이 속해있는 가장 가까운 박스" 가 기준이 된다.
+        4. fixed 는 상위 상자가 아닌 "해당 페이지 (window) 자체"를 기준으로 한다.
+        5. sticky 는 원래 있던 자리에 있지만, 스크롤이 일어날 경우 계속 그 위치에 붙어 있는 것!
+     */
+  }
+</style>
+
+</html>
