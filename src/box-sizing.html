@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .inner {
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+    }
+    .box2 {
+      padding: 20px;
+      box-sizing: content-box;
+    /* box-sizing 의 기본값은 content-box 이다.
+      box 의 사이즈는 content 의 width 와 height.
+      padding이나 border 는 박스 사이즈에는 영향을 주지 않는다.
+      box size는 content 의 사이즈에만 영향을 받는것.
+     */
+      border: 10px solid black;
+    /*
+      border 를 넣으면 box 외부로 검은 라인이 생긴다.
+      content의 width 와 height 는 그대로 100px, 100px
+
+      그러나 만약 box size가 padding이나 border를 포함하도록 하고 싶다면
+      box-sizing 을 border-box 로 하면 된다.
+    */
+    }
+
+    .box3 {
+      padding: 20px;
+      box-sizing: border-box;
+      /*
+        box size 가 content, padding, border 를 포함하게 되는것.
+        그러므로, 패딩이나 보더가 들어가게 되므로, 컨텐트 범위가 작아진다.
+        (대부분의 경우 border-box를 사용한다고 한다)
+      */
+      border: 10px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h3>Box without padding</h3>
+  <div class="box box1">
+    <div class="inner"></div>
+  </div>
+
+  <h3>Box with padding</h3>
+  <div class="box box2">
+    <div class="inner"></div>
+  </div>
+
+  <h3>Box with padding</h3>
+  <div class="box box3">
+    <div class="inner"></div>
+  </div>
+
+</body>
+</html>
