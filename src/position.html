@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Position</title>
+  <style>
+    .outer {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+      background-color: green;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .inner {
+      width: 100%;
+      height: 50%;
+    }
+    .inner1 {
+      background-color: blue;
+    }
+    .inner2 {
+      background-color: yellow;
+    }
+    .box1 .inner1 {
+      /*
+        position 의 기본값은 static이다.
+        static의 경우 top left right bottom 등 옵션을 줘도
+        해당 css 속성이 먹지 않는다.
+        늘 특정 자리에 위치하게 됨.
+        이때 top, left 등을 적용되도록 하려면
+        position을 relative로 해주면 된다.
+      */
+      /*position: static;*/
+      position: relative;
+      top: 30px;
+      left: 100px;
+    }
+    .box2 .inner1 {
+      /*
+        position absolute는 원래 있던 자리에서 빠져 나오게 된다.
+        그러므로 함께 들어있던 놈들의 재배치가 일어난다. (absolute 준애가 빠져 나가니까)
+        absolute 를 주게 되면, 근접한 부모중에 static이 아닌 부모를 기준해서 움직이게 된다.
+        그러므로 현재 absolute를 주게 되면, 가까운 부모인 box를 보는데 걔는 static(기본값)이므로
+        그 위에 부모인 outer를 보는데 outer 도 기본값인 static 이므로 그 부모인 body를 기준으로
+        위치하게 된다.
+      */
+      position: absolute;
+      top: 30px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="box box1">
+      <div class="inner inner1">inner 1</div>
+      <div class="inner inner2">inner 2</div>
+    </div>
+  </div>
+  <div class="outer">
+    <div class="box box2">
+      <div class="inner inner1">inner 1</div>
+      <div class="inner inner2">inner 2</div>
+    </div>
+  </div>
+</body>
+</html>
