@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 120px;
+      background-color: brown;
+      margin-bottom: 20px;
+    }
+    /*
+      translate은 옮기는 것
+    */
+    .box1 {
+      /*
+        해당 박스의 시작점에서부터 x축으로 오른쪽으로 100px
+      */
+      transform: translateX(100px);
+    }
+    .box2 {
+      transform: translate(50px, -20px);
+    /*
+      앞에껀 x축, 두번째껀 y축
+      해당 박스의 시작점 에서 오르쪽으로 50만큼
+      y축 값이 마이너스 이므로 위로 20px
+
+    */
+    }
+
+    /*
+      scale 은 확대
+    */
+    .box3 {
+      transform: scale(1.2);
+    /*
+      이렇게 하면 기본 크기보다 1.2배 커짐
+    */
+    }
+
+    /*
+      rotate는 45deg 하면 45도 돌아간 형태가 된다.
+    */
+    .box4 {
+      transform: rotate(45deg);
+    }
+
+    /*
+      그리고 위의 transform 옵션들을 하나로 묶어서도 가능하다
+    */
+    .box5 {
+      transform: translate(100px, 100px) scale(2) rotate(48deg);
+    }
+
+  </style>
+</head>
+  <body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+  </body>
+</html>
