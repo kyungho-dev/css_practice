@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transition</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      background-color: pink;
+    }
+
+    /*
+      hover시 너무 급작스럽게 동작이 바뀌므로
+      조금 더 부드럽게 동적으로 변경되도록 사용하는 옵션이
+      transition 이다.
+      어떤 property를 할건지(?)
+      얼마나 delay를 줄건지
+      얼마의 기간동안 할건지 (duration)
+      어떤 식으로 애니메이션을 줄건지
+      가은 것들을 지정할 수 있다.
+    */
+    .box1:hover {
+      background-color: blueviolet;
+    /*  transition-property: background-color;*/
+    /*!**/
+    /*  색깔 property 에 대한것을 줄것이므로 위와 같이 세팅*/
+    /**!*/
+    /*  transition-duration: 300ms;*/
+    /*  transition-timing-function: linear;*/
+    /*
+      위에 설정한 다양한 transition 설정들을 한줄로 할 수 있다.
+    */
+      transition: background-color 300ms linear;
+
+    }
+
+    .box2:hover {
+      border-radius: 50%;
+      background-color: cornflowerblue;
+      transition: all 2s ease;
+    /*
+      ease in 과 ease out 이 있는데
+      애니메이션 효과가 들어갈때 빨랐다가 나갈때 천천히
+      혹은 반대로
+      이런 효과 주는것
+    */
+    }
+
+    .box3:hover {
+      border-radius: 50%;
+      transform: translateX(400px);
+      background-color: cornflowerblue;
+      transition: all 2s cubic-bezier(0.47, 0, 1, -0.06);
+    /*
+      ease 효과를 주는 것..?
+      찾아보면 해당 옵션 변경할 수 있는 사이트가 있고,
+      해당 그래프를 조절한 후 위같은 수치를 복사해서 적용 가능
+    */
+    }
+
+  </style>
+</head>
+  <body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+  </body>
+</html>
